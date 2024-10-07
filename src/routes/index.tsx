@@ -1,26 +1,24 @@
-import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom';
-import Login  from '@pages/auth/Login';
-import Dashboard from '@pages/dashboard/Dashboard';
-import AddResults from '@pages/student/AddResults'
-import { Navbar }  from '@components/navbar/Navbar';
 import React, { useState } from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Login from '@pages/auth/Login';
+import Dashboard from '@pages/dashboard/Dashboard';
+import AddResults from '@pages/student/AddResults';
+import { Navbar } from '@components/navbar/Navbar';
 
-const router = createBrowserRouter(
-  createRoutesFromElements(
-    <>
-      <Route>
-        <Route path="/" element={<Login showMenu={false}/>} />
-        <Route path="/login" element={<Login showMenu={false}/>} />
-        {/* <Route path="/Navbar" element={<Navbar showMenu={false} setShowMenu = {false} />} /> */}
-        <Route path="/dashboard" element={<Dashboard />} /> 
-        <Route path="/addResults" element={<AddResults />} /> 
-      </Route>
-    </>
-  )
-);
-const AppRoutes = () => <RouterProvider router={router} />;
+const AppRoutes = () => {
+  const [showMenu, setShowMenu] = useState(false);
 
-export {
-  router,
-  AppRoutes
+  return (
+    <BrowserRouter> 
+      <Navbar showMenu={showMenu} setShowMenu={setShowMenu} />
+      <Routes>
+        <Route path="/" element={<Login setShowMenu={setShowMenu} />} />
+        <Route path="/login" element={<Login setShowMenu={setShowMenu} />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/addResults" element={<AddResults />} />
+      </Routes>
+    </BrowserRouter>
+  );
 };
+
+export default AppRoutes;

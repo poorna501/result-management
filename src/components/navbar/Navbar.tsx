@@ -1,38 +1,40 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
 import "../../assets/css/Navbar.module.css";
-import {router} from "@routes/index";
+import { useNavigate } from "react-router-dom";
 
 const Menu = [
     { name: "Dashboard", path: "/dashboard", icon: "icon-dashboard", },
     {name: "Products", path: "/addResults",icon: "icon-products"},
     {name: "CMS", path: "/dashboard",icon: "icon-cms"},
-    {name: "Log out", path: "/addResults",icon: "icon-logout"},
+    {name: "Log out", path: "/logout",icon: "icon-logout"},
   ];
 
 export const Navbar = ({showMenu, setShowMenu}) => {    
-    console.log("showMenu " , showMenu);
-       
+    showMenu = true
+    const navigate = useNavigate();
     const toggleMenu = () => {
         setShowMenu(!showMenu);
     };
     const closeMenuOnMobile = (path: string) => {
         if(path === '/logout') {
-            router.navigate('/')
+            setShowMenu(false)
+            navigate('/')
         } else {
-            router.navigate(path);
+            navigate(path);
         }
     };
   return (
     <>
     {showMenu ? (
-        <aside className="">
+        <aside >
             <div onClick={toggleMenu} >
                 <i></i> <i></i> <i></i>
             </div>
             <ul >
             { Menu.map((item, i) =>
                 <li key={i}>
-                <a rel="canonical" onClick={() => closeMenuOnMobile(item.path)}>
+                <a 
+                    rel="canonical" onClick={() => closeMenuOnMobile(item.path)}>
                     <i className={item.icon}></i>
                     {item.name}
                 </a>
