@@ -1,7 +1,7 @@
 function AddResults() {
   return (
     <>
-      <div>Add Results </div>
+      <div className="nav_container">Add Results </div>
     </>
   );
 }

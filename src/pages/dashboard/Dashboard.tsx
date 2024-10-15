@@ -5,7 +5,7 @@ function Dashboard() {
     const { isLogin } = location.state || { isLogin: false };
     return (
     <>
-       <div>
+       <div className="nav_container">
         <h1>Dashboard</h1>
             {isLogin ? (
                 <p>Welcome! You are logged in.</p>

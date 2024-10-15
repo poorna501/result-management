@@ -1,5 +1,5 @@
 // import React, { useState } from "react";
-import "../../assets/css/Navbar.module.css";
+import "../../assets/css/Navbar.css";
 import { useNavigate } from "react-router-dom";
 
 const Menu = [
@@ -26,7 +26,7 @@ export const Navbar = ({showMenu, setShowMenu}) => {
   return (
     <>
     {showMenu ? (
-        <aside >
+        <aside className="sidenav">
             <div onClick={toggleMenu} >
                 <i></i> <i></i> <i></i>
             </div>
