@@ -3,7 +3,7 @@ import { Form, Button } from 'react-bootstrap';
 import '../../assets/css/Login.css';
 import { useNavigate } from "react-router-dom";
 
-function Login({setShowMenu}) {
+function Login() {
   const [email, setEmail] = useState('poorna@gmail.com');
   const [password, setPassword] = useState('1234');
   const [errors, setErrors]:any = useState({});
@@ -31,9 +31,7 @@ function Login({setShowMenu}) {
       setErrors(formErrors);
     } else {
       setErrors({});
-      setShowMenu(true);
-      console.log("showMenu ", setShowMenu);
-      
+      localStorage.setItem('showMenu', 'true');
       navigate("/dashboard", {state: {"isLogin": true}});
       console.log('Login attempted with:', { email, password });
     }

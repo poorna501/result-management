@@ -12,7 +12,7 @@ export default defineConfig({
       "@components": path.resolve(__dirname, "./src/components"),
       "@interface": path.resolve(__dirname, "./src/interface"),   
       "@pages": path.resolve(__dirname, "./src/pages"),
-
+      "@common": path.resolve(__dirname, "./src/common"),
     },
   },
 });

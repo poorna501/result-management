@@ -1,8 +1,7 @@
-import { useLocation } from "react-router-dom";
+import useAuthRedirect from "@common/useAuthRedirect"
 
 function Dashboard() {
-    const location = useLocation();
-    const { isLogin } = location.state || { isLogin: false };
+    const  isLogin  = useAuthRedirect()
     return (
     <>
        <div className="nav_container">

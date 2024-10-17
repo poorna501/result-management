@@ -12,6 +12,7 @@
     "@interface/*": ["interface/*"],
     "@routes/*": ["routes/*"],
     "@pages/*": ["pages/*"],
+    "@common/*": ["common/*"]
   },
   "moduleResolution": "node",
   "esModuleInterop": true,
