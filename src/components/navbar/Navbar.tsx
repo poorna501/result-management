@@ -1,12 +1,12 @@
 // import React, { useState } from "react";
 import "../../assets/css/Navbar.css";
 import { useNavigate } from "react-router-dom";
-import useAuthRedirect from "@common/useAuthRedirect"
+// import useAuthRedirect from "@common/useAuthRedirect"
 
 
 const Menu = [
     { name: "Dashboard", path: "/dashboard", icon: "icon-dashboard", },
-    {name: "Results", path: "/addResults",icon: "icon-products"},
+    {name: "Results", path: "/result",icon: "icon-products"},
     {name: "Students", path: "/dashboard",icon: "icon-cms"},
     {name: "Log out", path: "/logout",icon: "icon-logout"},
   ];

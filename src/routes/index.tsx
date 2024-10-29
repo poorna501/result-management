@@ -1,8 +1,8 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Login from '@pages/auth/Login';
 import Dashboard from '@pages/dashboard/Dashboard';
-import AddResults from '@pages/student/AddResults';
 import { Navbar } from '@components/navbar/Navbar';
+import { List } from "@pages/results/List"
 
 const AppRoutes = () => {
 
@@ -13,7 +13,7 @@ const AppRoutes = () => {
         <Route path="/" element={<Login/>} />
         <Route path="/login" element={<Login/>} />
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/addResults" element={<AddResults />} />
+        <Route path='/result' element={<List/>}/>      
       </Routes>
     </BrowserRouter>
   );

@@ -36,8 +36,6 @@ function Login() {
       console.log('Login attempted with:', { email, password });
     }
   };
-
-
   return (
     <div className="login-wrapper">
       <div className="login-form-container">
@@ -56,8 +54,6 @@ function Login() {
               {errors.email}
             </Form.Control.Feedback>
           </Form.Group>
-
-
           <Form.Group className="mb-3" controlId="formBasicPassword">
             <Form.Label>Password</Form.Label>
             <Form.Control
@@ -71,8 +67,6 @@ function Login() {
               {errors.password}
             </Form.Control.Feedback>
           </Form.Group>
-
-
           <Button variant="primary" type="submit" className="login-button">
             Login
           </Button>
